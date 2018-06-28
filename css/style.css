@@ -114,6 +114,11 @@ h2{
 	padding:0 5px;
 }
 
+.utility a{
+	text-decoration: none;
+	color:#aaa;
+}
+
 .methods a{
 	text-decoration: none;
 	padding-left:5px;
