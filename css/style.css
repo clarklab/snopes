@@ -110,6 +110,12 @@ h2{
 	float: right;
 }
 
+.donation em{
+	font-style: normal;
+	display: none;
+	float: right;
+}
+
 .card{
 	border-radius: 5px;
 	background:#fff;
@@ -210,6 +216,10 @@ form .back{
 	bottom:20px;
 }
 
+form .phase2 input[type=radio] + label{
+	margin:0;
+}
+
 @media screen and (max-width:40rem){
 
 	.hero{
@@ -254,8 +264,26 @@ form .back{
 	.donation.block{
 		float: none;
 	}
+
+	form.mb4{
+		margin-bottom:6rem;
+	}
+	form .left{
+		float: none;
+		padding-top:0;
+	}
+	form .right{
+		padding-top:1rem;
+		float: none;
+	}
 	form button{
-		float:right;
+		display: block;
+		float: none;
+		width:100%;
+	}
+
+	form .back{
+		bottom:-40px;
 	}
 
 }

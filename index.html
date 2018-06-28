@@ -59,13 +59,13 @@
 				<h2>Get <span class="highlight">involved.</span></h2>
 				<form action="" class="clearfix mb4">
 
+					<div class="clearfix mb2">
+						<div class="donation block">Total Donation: <em>/m</em><span>$5.00</span></div>
+					</div>
+
 					<div class="phase1">
 
 						<div class="clearfix">
-
-						<div class="clearfix mb2">
-						<div class="donation block">Total Donation: <span>$5.00</span></div>
-						</div>
 
 						<input type="radio" id="donation5" name="donation" value="5" checked>
 						<label for="donation5"><span>$5.00</span></label>
@@ -118,14 +118,14 @@
 
 					<div class="phase2">
 						<div class="clearfix">
-							<input type="radio" id="creditcard" name="payment" value="creditcard">
+							<input type="radio" id="creditcard" name="payment" value="creditcard" checked>
 							<label for="creditcard"><span>Credit Card</span></label>
 
 							<input type="radio" id="paypal" name="payment" value="paypal">
 							<label for="paypal"><span>PayPal</span></label>
 
 							<input type="radio" id="googlepay" name="payment" value="googlepay">
-							<label for="googlepay"><span>Google Pay</span></label>
+							<label for="googlepay"><span>Google <span class="xs-hide">Pay</span></span></label>
 
 						</div>
 						<div class="clearfix mxn1 mt1">
@@ -144,7 +144,6 @@
 						</div>
 						<div class="right">
 							<a href="#" class="back"><img src="https://icon.now.sh/chevron/left" alt=""></a>
-							<div class="donation left">Total Donation: <span>$5.00</span></div>
 							<button>Donate to Snopes <img src='https://icon.now.sh/chevron' alt='chevron icon' /></button>
 						</div>
 					</div>
@@ -190,6 +189,13 @@
 	$('.phase1 input[type="radio"]').on('change', function(){
 		var value = $(this).next('label').text();
     	$('.donation span').text(value);
+	});
+	$('.phase1 input[type="checkbox"]').on('change', function(){
+		if ($(this).is(':checked')) {
+    		$('.donation em').show();
+    	} else {
+    		$('.donation em').hide();
+    	}
 	});
 	$( 'button.next' ).on( 'click', function() {
 		$('.phase2').show();
