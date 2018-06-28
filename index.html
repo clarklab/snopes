@@ -56,6 +56,10 @@
 			<div class="sm-col sm-col-7 p2">
 				<h2>Get <span class="highlight">involved.</span></h2>
 				<form action="" class="clearfix mb4">
+
+					<div class="phase1">
+
+						<div class="clearfix">
 						<input type="radio" id="donation5" name="donation" value="5" checked>
 						<label for="donation5"><span>$5.00</span></label>
 					
@@ -95,8 +99,32 @@
 							</div>
 						</div>
 						<div class="right">
-							<button>Next Step <img src='https:icon.now.sh/chevron' alt='chevron icon' /></button>
+							<button class="next">Next Step <img src='https:icon.now.sh/chevron' alt='chevron icon' /></button>
 						</div>
+						</div>
+					</div>
+
+					<div class="phase2">
+						<div class="clearfix mxn1 mt1">
+							<div class="col col-7 px1">
+								<input type="text" id="creditcard" name="creditcard" placeholder="Credit Card Number">
+							</div>
+							<div class="col col-5 px1">
+								<input type="text" id="cvc" name="cvc" placeholder="CVC">
+							</div>
+							<div class="col col-7 px1">
+								<input type="text" id="cardname" name="cardname" placeholder="Name on Card">
+							</div>
+							<div class="col col-5 px1">
+								<input type="text" id="expiration" name="expiration" placeholder="Expiration">
+							</div>
+						</div>
+						<div class="right">
+							<a href="#" class="back"><img src="https://icon.now.sh/chevron/left" alt=""></a>
+							<div class="donation left">Total Donation: <span>$5.00</span></div>
+							<button>Donate to Snopes <img src='https:icon.now.sh/chevron' alt='chevron icon' /></button>
+						</div>
+					</div>
 				</form>
 
 <div class="clearfix">
@@ -134,6 +162,25 @@
 </div>
 
 <script type="text/javascript" src='http://code.jquery.com/jquery-3.3.1.min.js'></script>
+<script>
+	$( document ).ready(function() {
+	$('input[type="radio"]').on('change', function(){
+		var value = $(this).next('label').text();
+    	$('.donation span').text(value);
+	});
+	$( 'button.next' ).on( 'click', function() {
+		$('.phase2').show();
+		$('.phase1').hide();
+		return false;
+	});
+	$( '.back' ).on( 'click', function() {
+		$('.phase1').show();
+		$('.phase2').hide();
+		return false;
+	});
+	});
+
+</script>
 <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 </body>
 </html>
