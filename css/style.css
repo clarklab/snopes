@@ -235,6 +235,9 @@ form .back{
 		height:90vh;
 		bottom:auto;
 	}
+	.hero .card{
+		box-shadow: 0 0 1px rgba(0,0,0,0.2);
+	}
 
 	.cta{
 		padding-bottom: 0;
