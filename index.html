@@ -15,7 +15,7 @@
 <div class="hero py4">
 	<div class="max-width-4 mx-auto">
 		<div class="clearfix content">
-			<div class="sm-col sm-col-7 p2">
+			<div class="sm-col sm-col-7 p3">
 				<h1 class="m0">Fake news is a real threat. Snopes needs <span class="highlight">your</span> help.</h1>
 				<h2 class="yellow mb3">Support fact-based journalism with a simple donation</h2>
 				<div class="team">
@@ -25,8 +25,8 @@
 				</div>
 			</div>
 			<div class="sm-col sm-col-1">&nbsp;</div>
-			<div class="sm-col sm-col-4 p2">
-				<a href="#" class="button mb2">Donate to Snopes</a>
+			<div class="cta sm-col sm-col-4 p3">
+				<a href="#" class="button donate mb2">Donate to Snopes</a>
 				<div class="card center p2 py3">
 					<p class="bold m0 mb1">Facts Matter.</p>
 					<p class="m0 mb2 fade small">2018 Funding Campaign</p>
@@ -55,13 +55,18 @@
 <div class="page py4">
 	<div class="max-width-4 mx-auto">
 		<div class="clearfix">
-			<div class="sm-col sm-col-7 p2">
+			<div class="sm-col sm-col-7 p3" id="donate-form">
 				<h2>Get <span class="highlight">involved.</span></h2>
 				<form action="" class="clearfix mb4">
 
 					<div class="phase1">
 
 						<div class="clearfix">
+
+						<div class="clearfix mb2">
+						<div class="donation">Total Donation: <span>$5.00</span></div>
+						</div>
+
 						<input type="radio" id="donation5" name="donation" value="5" checked>
 						<label for="donation5"><span>$5.00</span></label>
 					
@@ -100,13 +105,29 @@
 								<input type="text" id="email" name="email" placeholder="Email Address">
 							</div>
 						</div>
+						<div class="left pt2">
+							<input type="checkbox" name="sub" id="sub">
+							<label for="sub">Make this a monthly donation</label>
+							</div>
 						<div class="right">
+
 							<button class="next">Next Step <img src='https://icon.now.sh/chevron' alt='chevron icon' /></button>
 						</div>
 						</div>
 					</div>
 
 					<div class="phase2">
+						<div class="clearfix">
+							<input type="radio" id="creditcard" name="payment" value="creditcard">
+							<label for="creditcard"><span>Credit Card</span></label>
+
+							<input type="radio" id="paypal" name="payment" value="paypal">
+							<label for="paypal"><span>PayPal</span></label>
+
+							<input type="radio" id="googlepay" name="payment" value="googlepay">
+							<label for="googlepay"><span>Google Pay</span></label>
+
+						</div>
 						<div class="clearfix mxn1 mt1">
 							<div class="col col-7 px1">
 								<input type="text" id="creditcard" name="creditcard" placeholder="Credit Card Number">
@@ -148,7 +169,7 @@
 				</div>
 			</div>
 			<div class="sm-col sm-col-1">&nbsp;</div>
-			<div class="sm-col sm-col-4 p2">
+			<div class="sm-col sm-col-4 p3">
 				<h2>We can’t do this without <span class="highlight">you.</span> A look inside Snopes.com</h2>
 				<p>Donec id elit non mi porta gravida at eget metus. Nullam quis risus eget urna mollis ornare vel eu leo. Etiam porta sem malesuada magna mollis euismod.</p>
 				<p class="mb4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
@@ -166,7 +187,7 @@
 <script type="text/javascript" src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
 <script>
 	$( document ).ready(function() {
-	$('input[type="radio"]').on('change', function(){
+	$('.phase1 input[type="radio"]').on('change', function(){
 		var value = $(this).next('label').text();
     	$('.donation span').text(value);
 	});
@@ -180,6 +201,13 @@
 		$('.phase2').hide();
 		return false;
 	});
+	$('.button.donate').on('click', function (event) {
+    event.preventDefault();
+
+    $('html, body').animate({
+        scrollTop: $('#donate-form').offset().top
+    }, 500);
+});
 	});
 
 </script>

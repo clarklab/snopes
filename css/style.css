@@ -169,6 +169,28 @@ form input[type=radio]:checked + label {
   background-color:var(--yellow);
 } 
 
+form input[type=checkbox]{
+	display: none
+}
+form input[type=checkbox] + label{
+	padding-left:35px;
+	position: relative;
+}
+form input[type=checkbox] + label:after{
+	content:" ";
+	display: block;
+	height: 18px;
+	width:18px;
+	border-radius: 4px;
+	border:3px solid #ccc;
+	position: absolute;
+	top: -3px;
+}
+form input[type=checkbox]:checked +label:after{
+	background: var(--yellow);
+	border-color:var(--yellow);
+}
+
 form .phase2{
 	display: none;
 }
@@ -181,6 +203,10 @@ form .back{
 
 @media screen and (max-width:40rem){
 
+	.hero{
+		padding-bottom:0;
+	}
+
 	.hero h1{
 		font-size: 48px;
 		line-height: 42px;
@@ -192,6 +218,14 @@ form .back{
 	.hero:before, .hero:after{
 		height:90vh;
 		bottom:auto;
+	}
+
+	.cta{
+		padding-bottom: 0;
+	}
+
+	.page{
+		padding-top: 0;
 	}
 
 	.donation{
