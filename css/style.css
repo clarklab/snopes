@@ -126,7 +126,7 @@ button:focus {
 	font-size:20px;
 	width:70px;
 	font-weight: bold;
-	padding:0 0 0 10px;
+	padding:0 0 0 5px;
 }
 
 .donation em{
@@ -310,14 +310,9 @@ form .phase2 input[type=radio] + label{
 		float: none;
 	}
 	.talk .box{
-		background:var(--yellow);
+		border:5px solid var(--yellow);
 		border-radius:0;
-		padding:1rem 2rem;
-	}
-	.talk .box .highlight{
-		background:#000;
-		z-index:1;
-		color:#fff;
+		padding:2rem 2rem 1rem;
 	}
 
 }
