@@ -29,11 +29,11 @@
 			<div class="sm-col sm-col-1">&nbsp;</div>
 			<div class="cta sm-col sm-col-4 px2 py3">
 				<a href="#" class="button donate mb2">Donate to Snopes</a>
-				<div class="card center p2 py3">
-					<p class="bold m0 mb1">Facts Matter.</p>
+				<div class="card center p2 pt3 pb2">
 					<p class="m0 mb2 fade">2018 Funding Campaign</p>
+					<hr class="mxn2 fade-more mb2">
 					<p class="bold m0 mb1">Funds used for:</p>
-					<p class="m0 fade mb3">Operating Expenses<br>Legal Fees<br>Mission to Fight Misinformation</p>
+					<p class="m0 fade mb3">Expanding Coverage<br>Building Technology<br>Defending Ourselves<br>General Overhead</p>
 					<hr class="mxn2 fade-more mb2">
 					<p>Share</p>
 					<p class="social mb2">
@@ -44,9 +44,7 @@
 					</p>
 					<hr class="mxn2 fade-more mb2">
 					<div class="utility">
-					<p class="m0 mb1"><a href="#">Press</a></p>
-					<p class="m0 mb1"><a href="#">Utiltiy Link</a></p>
-					<p class="m0"><a href="#">Legal</a></p>
+					<p class="m0"><a href="#">Press</a> | <a href="#">Legal</a></p>
 					</div>
 				</div>
 			</div>
@@ -62,7 +60,7 @@
 				<form action="" class="clearfix mb2">
 
 					<div class="clearfix mb2">
-						<label class="donation block">Total Donation: <em>/m</em><span><input type="text" id="total" value="5"></span></label>
+						<label class="donation block">Enter Donation: <em>/m</em><span><input type="text" id="total" value="5"></span></label>
 					</div>
 
 					<div class="phase1">
@@ -196,6 +194,7 @@
 </div>
 
 <script type="text/javascript" src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
 <script>
 	$( document ).ready(function() {
 	$('.phase1 input[type="radio"]').on('change', function(){
@@ -215,6 +214,14 @@
     	$('.phase1 input[value='+value+']').attr("checked", true);
 
 	});
+
+	window.sr = ScrollReveal({
+	    beforeReveal: function (domEl) {
+	        $('input#total').focus();
+	    }
+	});
+
+	sr.reveal('.donation', { viewFactor: 0.9 }, 50);
 
 	$( 'button.next' ).on( 'click', function() {
 		$('.phase2').show();
